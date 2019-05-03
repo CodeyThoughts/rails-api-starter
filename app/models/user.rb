@@ -3,6 +3,6 @@ class User < ApplicationRecord
   has_secure_password
 
   # Validations
-  validates_presence_of :username, :email, :password_digest
-  validates_uniqueness_of :email, on: :create, message: 'must be unique'
+  validates :username, :email, :password_digest, presence: true
+  validates :email, uniqueness: true, on: :create, message: 'must be unique'
 end

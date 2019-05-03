@@ -1,1 +1,102 @@
 require: rubocop-performance
+
+AllCops:
+  EnabledByDefault: true
+  TargetRubyVersion: 2.4
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Include:
+    - '**/*.pryrc'
+    - '**/*.rake'
+    - '.env'
+    - '.simplecov'
+    - '**/config.ru'
+    - '**/Gemfile'
+    - '**/Guardfile'
+    - '**/Rakefile'
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/2015*.rb'
+    - 'db/migrate/2016*.rb'
+Documentation:
+  Enabled: false
+Lint/HandleExceptions:
+  Exclude:
+    - 'bin/*'
+Style/RescueStandardError:
+  Exclude:
+    # When getting evidence from external sources there are
+    # many possible problems, and we don't care - if there's
+    # an error getting evidence, we treat it as no evidence.
+    - 'app/lib/evidence.rb'
+Metrics/AbcSize:
+  Max: 17
+  Exclude:
+    - 'db/migrate/*'
+Metrics/ClassLength:
+  Exclude:
+    - 'db/migrate/*'
+Metrics/LineLength:
+  Max: 150
+  Exclude:
+    - 'db/migrate/*'
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'test/**/*.rb'
+Style/Copyright:
+  Enabled: false
+Style/InlineComment:
+  Enabled: false
+Style/DocumentationMethod:
+  Enabled: false
+Style/MethodCallWithArgsParentheses:
+  Enabled: false
+Style/MissingElse:
+  Enabled: false
+Style/NegatedIf:
+  Enabled: true
+  EnforcedStyle: postfix
+Style/Send:
+  Exclude:
+    - 'test/**/*.rb'
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+#
+# Historical systems could only reliably handle comments if they were ASCII.
+# But UTF-8 has essentially "taken over", so there's no reason to limit
+# ourselves to ASCII. Having ASCII-only comments makes it unnecessarily
+# difficult to discuss/describe locale issues.  *Code* handles UTF-8
+# without incident, so there's no reason to limit comments to ASCII.
+#
+Style/AsciiComments:
+  Enabled: false
+#
+# The following are new cops in Rubocop 0.52 which have disabled because
+# we aren't ready for them right now. It's diffult to do things "all at once".
+# Instead, we'll get things running first (ignoring these cops), and
+# later try to slowly comply with them or reject them.
+# See issue #1069, which tracks this decision.
+#
+Style/StringHashKeys:
+  Enabled: false
+Naming/ConstantName:
+  Enabled: false
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
+Style/MixinUsage:
+  Enabled: false
+Rails/EnvironmentComparison:
+  Enabled: false
+Lint/MissingCopEnableDirective:
+  Enabled: false
+Lint/NumberConversion:
+  Enabled: false
+Layout/ClassStructure:
+  Enabled: false
+Rails/Presence:
+  Enabled: false
