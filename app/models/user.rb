@@ -4,5 +4,5 @@ class User < ApplicationRecord
 
   # Validations
   validates :username, :email, :password_digest, presence: true
-  validates :email, uniqueness: true, on: :create, message: 'must be unique'
+  validates :email, uniqueness: true, on: :create
 end
