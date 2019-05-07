@@ -14,9 +14,8 @@ class UsersController < ApplicationController
     render json: @user
   end
 
-  # POST /signup
+  # POST /auth/signup
   # return authenticated token upon signup
-  # POST /users
   def create
     @user = User.create!(user_params)
     auth_token = AuthenticateUser.new(@user.email, @user.password).call
