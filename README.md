@@ -8,6 +8,7 @@ Get started with this template, add your logic and connect it to your frontend a
 ## Prequisites
 
 ruby
+ruby.
 
 Have a MySQL/MariaDB database running
 
