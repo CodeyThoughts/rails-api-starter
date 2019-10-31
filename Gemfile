@@ -54,4 +54,4 @@ end
 
 gem "doorkeeper", "~> 5.1"
 
-gem "devise", "~> 4.6"
+gem "devise", "~> 4.7"
