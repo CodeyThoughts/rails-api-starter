@@ -12,7 +12,7 @@ gem 'rails', '~> 5.1.6', '>= 5.1.6.2'
 gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 # Use Puma as the app server
 gem 'faker', '~> 1.9.3'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
